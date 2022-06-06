@@ -229,3 +229,55 @@ a {
   color: aliceblue;
   padding: 10px;
 }
+
+@media (max-width:600px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(8, auto);
+  }
+
+  .container .cabecalho {
+    grid-column: 1/3;
+    grid-row: 1/2;
+  }
+
+  .container .cabecalho {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 12px;
+    padding-left: 5%;;
+  }
+
+  .botao {
+    height: 2px;
+  }
+
+  
+  .container .img {
+    grid-column:1/3;
+    grid-row: 2/3;
+    overflow: hidden;
+  }
+  
+  .img {
+    width: 100%;
+    height: 150px;
+  }
+
+  .container .clasificacaobaloes {
+    grid-column: 1/2;
+    grid-row: 3/5;
+  }
+  .container .clasificacao__cafedamanha
+    grid-column: 1/2;
+
+
+
+
+
+
+
+}
+
