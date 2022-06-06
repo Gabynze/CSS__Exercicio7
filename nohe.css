@@ -1,19 +1,22 @@
 *{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body{
+  background-color: black;
   font-family: 'Manjari', sans-serif;
 }
 
+/**Colocando número de grid**/
 .container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(6, auto);
 }
 
-
+/**clases de 1 fila (começa coluna 1 e termina na ultima)**/
 .container .cabecalho,
 .container .footer,
 .container .img {
@@ -21,7 +24,7 @@ body{
   grid-column-end: -1;
 }
 
-
+/**Header**/
 .container .cabecalho {
   background-color: rgb(225, 145, 145);
   display: flex;
@@ -34,6 +37,7 @@ body{
   font-size: 20px;
 }
 
+/**Botão de nav**/
 a {
   text-decoration: none;
   color: inherit
@@ -55,12 +59,13 @@ a {
   font-weight: bold;
 }
 
+/**imagem (logo) depois do header**/
 .img {
   display: flex;
   justify-content: center;
 }
 
-
+/**4 imagens com titulo e texto**/
 .container .clasificacaobaloes {
   grid-column: 1/2;
   grid-row: 3/5;
@@ -117,6 +122,8 @@ a {
   margin-top: 20px;
   line-height: 20px;
 }
+
+/**Section extra de dicas e section não pode faltar (cada uma com 3 imagens con texto)**/
 .container .sectionextra__dicas {
   grid-column: 1/2;
   grid-row: 5/6;
@@ -124,6 +131,18 @@ a {
   flex-direction: column;
   padding-top: 40px;
   padding-bottom: 40px;
+  background-color: rgb(249, 204, 179);
+  text-align: center;
+}
+
+.container .sectionextra__naopodefaltar {
+  grid-column: 2/3;
+  grid-row: 5/6;
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 15px;
   background-color: rgb(249, 204, 179);
   text-align: center;
 }
@@ -156,18 +175,7 @@ a {
   margin-left: 20px;
 }
 
-.container .sectionextra__naopodefaltar {
-  grid-column: 2/3;
-  grid-row: 5/6;
-  display: flex;
-  flex-direction: column;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  padding-left: 15px;
-  background-color: rgb(249, 204, 179);
-  text-align: center;
-}
-
+/**Section extra festejar (imagem maior com texto)**/
 .container .sectionextra__festejar {
   grid-column: 3/5;
   grid-row: 5/6;
@@ -194,6 +202,7 @@ a {
   padding-top: 20px;
 }
 
+/**Section redes e enlaces**/
 .container .redes {
   grid-column: 1/-1;
   grid-row: 6/7;
@@ -222,6 +231,7 @@ a {
   line-height: 20px;
 }
 
+/**Footer**/
 .footer h2 {
   text-align: center;
   background-color: rgb(201, 92, 92);
@@ -231,18 +241,18 @@ a {
 }
 
 @media (max-width:600px) {
+
+  /**Colocando número de grid**/
   .container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(8, auto);
+    grid-template-columns: repeat(2, 185px);
+    grid-template-rows: repeat(10, auto);
   }
 
+  /**Header**/
   .container .cabecalho {
     grid-column: 1/3;
     grid-row: 1/2;
-  }
-
-  .container .cabecalho {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -250,34 +260,218 @@ a {
     padding-left: 5%;;
   }
 
+  /**Botão de nav**/
   .botao {
     height: 2px;
   }
 
-  
+  /**imagem (logo) depois do header**/
   .container .img {
     grid-column:1/3;
     grid-row: 2/3;
     overflow: hidden;
+    height: 200px;
   }
   
-  .img {
-    width: 100%;
-    height: 150px;
+  .img img {
+    width: 500px;
+    height: 200px;
   }
 
+  /**4 imagens com titulo e texto**/
   .container .clasificacaobaloes {
-    grid-column: 1/2;
-    grid-row: 3/5;
+    grid-column:1/2;
+    grid-row: 3/4;
   }
-  .container .clasificacao__cafedamanha
+  .clasificacaobaloes img {
+    width: 100px;
+    height: 150px;
+    padding-top: 5px;
+  }
+
+  .container .clasificacao__cafedamanha {
+    grid-column:2/3;
+    grid-row: 3/4;
+  }
+  .clasificacao__cafedamanha img {
+    width: 170px;
+    height: 170px;
+  }
+
+  .container .clasificacao__maxibuque {
+    grid-column:1/2;
+    grid-row: 4/5;
+  }
+  .clasificacao__maxibuque img {
+    width: 150px;
+    height: 200px;
+    padding-top: 5px;
+  }
+
+  .container .clasificacao__presentesafetivos {
+    grid-column:2/3;
+    grid-row: 4/5;
+  }
+  .clasificacao__presentesafetivos img {
+    width: 160px;
+    height: 210px;
+    padding-top: 0px;
+  }
+
+  .container .clasificacaobaloes,
+  .container .clasificacao__cafedamanha,
+  .container .clasificacao__maxibuque,
+  .container .clasificacao__presentesafetivos {
+    margin-top: 0;
+    line-height: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 1px;
+  }
+
+  .info,
+  .info__titulo {
+    margin-top: 5px;
+    font-size: 14px;
+  }
+
+  .info__texto {
+    padding: 0px;
+    text-align: justify ;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  /**Section extra de dicas e section não pode faltar (cada uma com 3 imagens con texto)**/
+  .container .sectionextra__dicas {
     grid-column: 1/2;
+    grid-row: 5/6;
+    padding-top: 5px;
+    padding-bottom: 0px;
+    justify-content: space-around;
+    height: 400px;
+  }
+  
+  .sectionextra__dicas img{
+    height: 60px;
+    width: 60px;
+  }
 
+  .sectionextra__dicas h2 {
+    font-size: 14px;
+  }
 
+  .container .sectionextra__naopodefaltar {
+    grid-column: 2/3;
+    grid-row: 5/6;
+    padding-top: 5px;
+    padding-bottom: 0px;
+    padding-left: 5px;
+    justify-content: space-around;
+    height:400px;
+  }
 
+  .sectionextra__naopodefaltar img{
+    height: 60px;
+    width: 60px;
+  }
+  .sectionextra__naopodefaltar h2 {
+    font-size: 14px;
+  }
 
+  .dicas__t1,
+  .dicas__t2,
+  .dicas__t3,
+  .faltar__t1,
+  .faltar__t2,
+  .faltar__t3 {
+    line-height: 15px;
+    font-size: 12px;
+    padding-left: 5px;
+    margin-top: 5px;
+    justify-content: center;
+    height: auto;
+  }
 
+  .dicas__t1 p,
+  .dicas__t2 p,
+  .dicas__t3 p,
+  .faltar__t1 p,
+  .faltar__t2 p,
+  .faltar__t3 p {
+  margin-left: 10px;
+  margin-right: 10px;
+  }
 
+  /**Section extra festejar (imagem maior com texto)**/
+  .container .sectionextra__festejar {
+    grid-column: 1/3;
+    grid-row: 6/7;
+    justify-content: space-around;
+    height: auto;
+    padding-top: 5px;
+  }
 
+  .sectionextra__festejar h2 {
+    font-size: 14px;
+  }
+
+  .festejar__t1,
+  .festejar__t1 p {
+    margin-top: 1 px;
+  }
+
+  .festejar__t1 p {
+    text-align: center;
+    margin-left: 0px;
+    margin-right: 0px;
+    font-size: 12px;
+    line-height: 15px;
+    padding-top: 5px;
+  }
+
+  /**Section redes e enlaces**/
+  .container .redes {
+    grid-column: 1/3;
+    grid-row: 7/8; 
+    height: auto;
+    padding: 10px;
+  }
+
+  .redes__texto {
+    width: 300px;
+    height: auto;
+    font-size: 12px;
+    padding: 5px;
+  }
+
+  .enlaces h2,
+  .enlaces ul {
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 20px;
+    list-style: none;
+    line-height: 20px;
+    font-size: 14px;
+  }
+  /**Footer**/
+  .footer{
+    grid-column: 1/3;
+    grid-row: 8/9;
+  }
 }
+
+
+  
+
+  
+
+
+
+
+
+
+
+
 
